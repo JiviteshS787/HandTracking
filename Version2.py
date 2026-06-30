@@ -17,10 +17,10 @@ def render_callback(result: vision.HandLandmarkerResult, output_image: mp.Image,
 base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
 options = vision.HandLandmarkerOptions(
     base_options=base_options,
-    running_mode=vision.RunningMode.LIVE_STREAM,  # 🚀 CRITICAL FOR LIVE VIDEO
+    running_mode=vision.RunningMode.LIVE_STREAM,
     result_callback=render_callback,
     num_hands=1,
-    min_hand_detection_confidence=0.5, # Slightly lowered for snappier acquisition
+    min_hand_detection_confidence=0.5,
     min_hand_presence_confidence=0.5,
     min_tracking_confidence=0.5
 )
@@ -59,6 +59,8 @@ while cap.isOpened():
     
     # Async call: sends frame and returns immediately (no blocking!)
     detector.detect_async(mp_image, timestamp_ms)
+
+    render_hand(img, h, w, )
 
     # Use the most recent async results if they exist
     if latest_results and latest_results.hand_landmarks:

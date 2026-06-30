@@ -111,4 +111,6 @@ while cap.isOpened():
     elif key == ord('f') or key == ord('F'):  # F to toggle fullscreen
         is_fullscreen = cv2.getWindowProperty("Hand Tracking", cv2.WND_PROP_FULLSCREEN) == cv2.WINDOW_FULLSCREEN
         if is_fullscreen:
-            cv2.
+            cv2.setWindowProperty("Hand Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_NORMAL)
+        else:
+            cv2.setWindowProperty("Hand Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
