@@ -3,12 +3,12 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import time
+from panda3d.core import loadPrcFileData, Point3, Vec4
+
+loadPrcFileData("", "notify-level warning")
 
 from direct.showbase.ShowBase import ShowBase
-from panda3d.core import loadPrcFileData, Point3, Vec4
 import simplepbr
-
-loadPrcFileData("", "notify-level-glgsg debug")
 
 HAND_MODEL_PATH = "hand_landmarker.task"
 GESTURE_MODEL_PATH = "gesture_recognizer.task"
