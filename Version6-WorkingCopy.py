@@ -258,7 +258,6 @@ class App(ShowBase):
         if gesture:
             gesture_name = gesture["name"]
             gesture_confidence = gesture["confidence"]
-            print(f"{gesture_name}: {gesture_confidence:.2f}")
 
         # =========================
         # CLOSED FIST → ZOOM IN
